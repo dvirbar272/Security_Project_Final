@@ -1,4 +1,4 @@
-<h2>Vulnerable Login (SQLi-prone)</h2>
+<h2>Vulnerable Login</h2>
 <form method="post">
   {% csrf_token %}
   <label>Username: <input name="username" required></label><br>
@@ -6,3 +6,5 @@
   <button type="submit">Login</button>
 </form>
 <p>{{ message }}</p>
+<p><a href="/vulnerable/forgot/">Forgot password</a></p>
+<p><a href="/vulnerable/change-password/">Change password</a></p>

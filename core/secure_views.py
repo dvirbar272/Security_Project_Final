@@ -99,10 +99,10 @@ def change_password_secure(request):
         if not user:
             message = "User not found."
         else:
-           
+            
             is_valid_reset = False
             if token:
-              
+                
                 if user.reset_token and token == user.reset_token:
                     is_valid_reset = True
                 else:
@@ -128,9 +128,9 @@ def change_password_secure(request):
                     if new_hash in recent_hashes:
                         message = "New password was used recently."
                     else:
-                       
+                        
                         user.password_hash = new_hash
-                       
+                        
                         user.reset_token = None
                         user.reset_created_at = None
                         user.save(update_fields=["password_hash", "reset_token", "reset_created_at"])
