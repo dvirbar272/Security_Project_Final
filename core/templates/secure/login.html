@@ -1,0 +1,10 @@
+<h2>Secure Login</h2>
+<form method="post">
+  {% csrf_token %}
+  <label>Username: <input name="username" required></label><br>
+  <label>Password: <input type="password" name="password" required></label><br>
+  <button type="submit">Login</button>
+</form>
+<p>{{ message }}</p>
+<p><a href="/secure/forgot/">Forgot password</a></p>
+<p><a href="/secure/change-password/">Change password</a></p>

@@ -1,0 +1,11 @@
+<h2>Secure Add Customer (escaped)</h2>
+<form method="post">
+  {% csrf_token %}
+  <label>First name: <input name="first_name" required></label><br>
+  <label>Last name: <input name="last_name" required></label><br>
+  <label>Email: <input type="email" name="email" required></label><br>
+  <label>Phone: <input name="phone_number" required></label><br>
+  <button type="submit">Add Customer</button>
+</form>
+<p>{{ message }}</p>
+{% if created_name %}<p>Created: {{ created_name }}</p>{% endif %}
